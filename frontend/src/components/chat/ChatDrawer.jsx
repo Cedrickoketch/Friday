@@ -84,7 +84,7 @@ export default function ChatDrawer() {
                   className={`
                     max-w-[80%] px-4 py-3 rounded-2xl text-sm leading-relaxed
                     ${msg.role === 'user'
-                      ? 'bg-friday-500 text-white rounded-br-sm'
+                      ? 'bg-primary-500 text-black rounded-br-sm'
                       : msg.isError
                         ? 'bg-red-900/40 text-red-300 border border-red-800 rounded-bl-sm'
                         : 'bg-gray-800 text-gray-100 rounded-bl-sm'

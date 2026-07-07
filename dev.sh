@@ -8,6 +8,7 @@ echo "🤖 Starting Friday dev environment..."
 echo ""
 echo "▶ Setting up backend..."
 cd backend
+source venv/bin/activate && pip install -r requirements.txt && ollama pull gemma:2b
 
 if [ ! -d "venv" ]; then
   echo "  Creating Python virtualenv..."
@@ -40,6 +41,7 @@ cd ..
 echo ""
 echo "▶ Setting up frontend..."
 cd frontend
+npm install
 
 if [ ! -f ".env" ]; then
   cp .env.example .env

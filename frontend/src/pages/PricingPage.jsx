@@ -34,7 +34,7 @@ const PLANS = [
   {
     id: 'premium',
     name: 'Premium',
-    price: '$12',
+    price: '$10',
     period: '/month',
     features: [
       'Everything in Pro',
@@ -68,7 +68,7 @@ export default function PricingPage() {
       <button onClick={() => navigate(-1)} className="self-start mb-8 text-gray-500 hover:text-white text-sm transition-colors">
         ← Back
       </button>
-      <h1 className="font-display text-4xl font-bold text-white mb-2">Simple pricing</h1>
+      <h1 className="font-display text-4xl text-white mb-2">Check out our pricing</h1>
       <p className="text-gray-400 mb-12">Start free. Upgrade when Friday becomes indispensable.</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl w-full">
@@ -80,7 +80,7 @@ export default function PricingPage() {
             }`}
           >
             {plan.highlight && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-friday-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+              <span className="absolute -top-6 left-1/2 -translate-x-1/2 bg-friday-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
                 Most popular
               </span>
             )}

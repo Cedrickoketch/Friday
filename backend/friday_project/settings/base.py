@@ -10,7 +10,7 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost,127.0.0.1").split(",")
 GOOGLE_CLIENT_ID = config("GOOGLE_CLIENT_ID", default=os.getenv("GOOGLE_CLIENT_ID", "")).strip()
 GOOGLE_SECRET = config("GOOGLE_CLIENT_SECRET", default=os.getenv("GOOGLE_CLIENT_SECRET", "")).strip()
-
+FRONTEND_URL = os.environ.get("FRONTEND_URL", "http://localhost:5173")
 
 
 INSTALLED_APPS = [
@@ -155,7 +155,7 @@ SOCIALACCOUNT_PROVIDERS = {
 # ── AI Provider ─────────────────────────────────────────────────────────────
 AI_PROVIDER = config("AI_PROVIDER", default="ollama")  # "ollama" | "gemini"
 OLLAMA_BASE_URL = config("OLLAMA_BASE_URL", default="http://localhost:11434")
-OLLAMA_MODEL = config("OLLAMA_MODEL", default="friday-model")
+OLLAMA_MODEL = config("OLLAMA_MODEL", default="friday_model")
 GEMINI_API_KEY = config("GEMINI_API_KEY", default="")
 
 # ── News ─────────────────────────────────────────────────────────────────────

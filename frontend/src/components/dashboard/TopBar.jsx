@@ -1,5 +1,6 @@
 import { useAuthStore } from '../../store/authStore'
 import { subscriptionsApi } from '../../services/api'
+import { useNavigate } from 'react-router-dom'
 
 const TIER_BADGE = {
   free: 'badge-free',
@@ -19,16 +20,20 @@ export default function TopBar() {
     }
   }
 
+  const userTier = user?.tier ? String(user.tier).toLowerCase() : 'free'
+
   return (
     <header className="border-b border-gray-800 bg-gray-950/80 backdrop-blur-xs sticky top-0 z-30">
       <div className="max-w-(--breakpoint-2xl) mx-auto px-4 h-14 flex items-center justify-between">
         <span className="font-display text-xl text-white">Friday</span>
 
         <div className="flex items-center gap-3">
+          <a className='btn-primary text-sm' href='/pricing'>Pricing</a>
+
           {user?.tier === 'free' && (
             <button
               onClick={() => handleUpgrade('pro')}
-              className="btn-primary text-sm py-1.5"
+              className="btn-primary text-sm py-1.5 cursor-pointer"
             >
               Upgrade to Pro
             </button>

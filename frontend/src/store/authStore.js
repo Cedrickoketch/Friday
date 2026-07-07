@@ -5,6 +5,7 @@ export const useAuthStore = create((set, get) => ({
   user: null,
   isLoading: true,
   isAuthenticated: false,
+  setUser: (userData) => set({ user: userData }),
 
   init: async () => {
     const token = localStorage.getItem('access_token')

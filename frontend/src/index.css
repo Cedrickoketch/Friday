@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Wosker';
+  src: url('./assets/fonts/Wosker.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-gray-50: oklch(0.961 0.003 264.7);
+  --color-gray-100: oklch(0.923 0.006 239.74);
+  --color-gray-200: oklch(0.842 0.011 247.93);
+  --color-gray-300: oklch(0.762 0.017 245.13);
+  --color-gray-400: oklch(0.677 0.024 248.18);
+  --color-gray-500: oklch(0.593 0.031 248.34);
+  --color-gray-600: oklch(0.504 0.026 248.34);
+  --color-gray-700: oklch(0.412 0.02 251.08);
+  --color-gray-800: oklch(0.318 0.014 248.24);
+  --color-gray-900: oklch(0.212 0.009 255.61);
+  --color-gray-950: oklch(0.157 0.004 229.06);
+  --color-secondary-50: oklch(0.986 0.014 84.55);
+  --color-secondary-100: oklch(0.974 0.03 88.35);
+  --color-secondary-200: oklch(0.95 0.059 87.98);
+  --color-secondary-300: oklch(0.924 0.087 86.99);
+  --color-secondary-400: oklch(0.902 0.112 86.65);
+  --color-secondary-500: oklch(0.88 0.135 86.05);
+  --color-secondary-600: oklch(0.835 0.167 81.54);
+  --color-secondary-700: oklch(0.717 0.149 78.2);
+  --color-secondary-800: oklch(0.534 0.111 79.15);
+  --color-secondary-900: oklch(0.333 0.068 82.84);
+  --color-secondary-950: oklch(0.221 0.045 86.47);
+  --color-primary-50: oklch(0.989 0.007 186.63);
+  --color-primary-100: oklch(0.98 0.015 181.66);
+  --color-primary-200: oklch(0.964 0.026 184.67);
+  --color-primary-300: oklch(0.945 0.04 184.88);
+  --color-primary-400: oklch(0.926 0.054 183.34);
+  --color-primary-500: oklch(0.909 0.067 183.16);
+  --color-primary-600: oklch(0.84 0.114 180.47);
+  --color-primary-700: oklch(0.776 0.136 177.93);
+  --color-primary-800: oklch(0.581 0.101 177.37);
+  --color-primary-900: oklch(0.352 0.059 177.85);
+  --color-primary-950: oklch(0.229 0.035 182.2);
+  --color-black: oklch(0.1743 0.0048 196.72);
+  --color-white: oklch(0.982 0.0041 91.45);
+
+  --font-sans: Poppins, system-ui, sans-serif;
+  --font-display: 'Wosker', sans-serif;
+
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-fade-in: fadeIn 0.3s ease-in-out;
+  --animate-slide-up: slideUp 0.3s ease-out;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility card {
+  @apply bg-gray-900 border border-gray-800 rounded-2xl p-5;
+}
+
+@utility btn-primary {
+  @apply bg-primary-500 hover:bg-primary-600 text-white font-medium px-4 py-2 rounded-xl transition-colors duration-200;
+}
+
+@utility btn-ghost {
+  @apply hover:bg-gray-800 text-gray-300 hover:text-white font-medium px-4 py-2 rounded-xl transition-colors duration-200;
+}
+
+@utility input {
+  @apply bg-gray-800 border border-gray-700 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 rounded-xl px-4 py-2.5 text-white placeholder-gray-500 outline-hidden transition-all duration-200 w-full;
+}
+
+@utility badge-free {
+  @apply bg-gray-800 text-gray-400 text-xs font-medium px-2 py-0.5 rounded-full;
+}
+
+@utility badge-pro {
+  @apply bg-primary-900 text-primary-100 text-xs font-medium px-2 py-0.5 rounded-full;
+}
+
+@utility badge-premium {
+  @apply bg-amber-900/50 text-amber-300 text-xs font-medium px-2 py-0.5 rounded-full;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    @apply bg-gray-950 text-gray-100 font-sans antialiased;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-700 rounded-full;
+  }
+}

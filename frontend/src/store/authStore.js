@@ -23,8 +23,8 @@ export const useAuthStore = create((set, get) => ({
     }
   },
 
-  loginWithGoogle: async (credential) => {
-    const { data } = await authApi.googleLogin(credential)
+  loginWithGoogle: async (code) => {
+    const { data } = await authApi.googleLogin(code) 
     localStorage.setItem('access_token', data.tokens.access)
     localStorage.setItem('refresh_token', data.tokens.refresh)
     set({ user: data.user, isAuthenticated: true })

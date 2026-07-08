@@ -45,7 +45,7 @@ export default function TopBar() {
 
           <div className="flex items-center gap-2 group relative cursor-pointer">
             {user?.avatar ? (
-              <img src={user.avatar} alt="avatar" className="w-8 h-8 rounded-full" />
+              <img referrerPolicy="no-referrer" src={user.avatar} alt="avatar" className="w-8 h-8 rounded-full" />
             ) : (
               <div className="w-8 h-8 rounded-full bg-friday-500 flex items-center justify-center text-sm font-semibold">
                 {user?.first_name?.[0] || user?.email?.[0]}

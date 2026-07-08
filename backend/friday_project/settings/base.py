@@ -144,7 +144,10 @@ SOCIALACCOUNT_PROVIDERS = {
             "email",
             "https://www.googleapis.com/auth/calendar",
         ],
-        "AUTH_PARAMS": {"access_type": "offline"},
+        "AUTH_PARAMS": {
+            "access_type": "offline",
+            "prompt": "consent"
+            },
         "APP": {
             "client_id": GOOGLE_CLIENT_ID,
             "secret": GOOGLE_SECRET,

@@ -37,8 +37,8 @@ api.interceptors.response.use(
 // ── Auth ────────────────────────────────────────────────────────────────────
 export const authApi = {
   googleLogin: (code) => api.post('/auth/google/', { code: code }),
-  getProfile: () => api.get('/auth/profile/'),
-  updateProfile: (data) => api.patch('/auth/profile/', data),
+  getProfile: () => api.get('/auth/user/'),
+  updateProfile: (data) => api.patch('/auth/user/', data),
 }
 
 // ── Assistant ────────────────────────────────────────────────────────────────

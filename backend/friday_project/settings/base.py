@@ -10,7 +10,7 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost,127.0.0.1").split(",")
 GOOGLE_CLIENT_ID = config("GOOGLE_CLIENT_ID", default=os.getenv("GOOGLE_CLIENT_ID", "")).strip()
 GOOGLE_SECRET = config("GOOGLE_CLIENT_SECRET", default=os.getenv("GOOGLE_CLIENT_SECRET", "")).strip()
-FRONTEND_URL = os.environ.get("FRONTEND_URL", "http://localhost:5173")
+FRONTEND_URL = os.environ.get("FRONTEND_URL", default="http://localhost:5173")
 
 
 INSTALLED_APPS = [
@@ -125,7 +125,10 @@ SIMPLE_JWT = {
 
 # ── CORS ────────────────────────────────────────────────────────────────────
 CORS_ALLOWED_ORIGINS = [
-    config("FRONTEND_URL", default="http://localhost:5173"),
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:5174",
+    "http://127.0.0.1:5174",
 ]
 CORS_ALLOW_CREDENTIALS = True
 
@@ -152,6 +155,7 @@ SOCIALACCOUNT_PROVIDERS = {
             "client_id": GOOGLE_CLIENT_ID,
             "secret": GOOGLE_SECRET,
         },
+        'OAUTH_PKCE_ENABLED': True,
     }
 }
 

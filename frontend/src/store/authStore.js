@@ -24,11 +24,24 @@ export const useAuthStore = create((set, get) => ({
   },
 
   loginWithGoogle: async (code) => {
-    const { data } = await authApi.googleLogin(code) 
-    localStorage.setItem('access_token', data.tokens.access)
-    localStorage.setItem('refresh_token', data.tokens.refresh)
-    set({ user: data.user, isAuthenticated: true })
-    return data.user
+    try {
+      const { data } = await authApi.googleLogin(code) 
+      localStorage.setItem('access_token', data.tokens.access)
+      localStorage.setItem('refresh_token', data.tokens.refresh)
+      set({ user: data.user, isAuthenticated: true })
+      return data.user
+    } catch (error) {
+      console.error("❌ Google Login Failed inside authStore:")
+      if (error.response) {
+        // The server responded with a status code outside of 2xx
+        console.error("Backend Error Response Body:", error.response.data)
+        console.error("Backend Error Status:", error.response.status)
+      } else {
+        console.error("Error setting up request:", error.message)
+      }
+      // Re-throw so your LoginPage.jsx catch block can still see it if needed
+      throw error 
+    }
   },
 
   logout: () => {

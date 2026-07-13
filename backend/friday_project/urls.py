@@ -13,10 +13,10 @@ urlpatterns = [
     path('api/news/', include('apps.news.urls')),
     path('api/assistant/', include('apps.assistant.urls')),
     path('api/subscriptions/', include('apps.subscriptions.urls')),
+    path('api/auth/user/', UserDetailsView.as_view(), name='rest_user_details'),
+    path('api/auth/user', UserDetailsView.as_view()),
     path("google/", GoogleLoginView.as_view(), name="google_login"), 
     path("auth/google/", GoogleLoginView.as_view(), name="google_login" ),
-    path('auth/user/', UserDetailsView.as_view(), name='rest_user_details'),
-    path('auth/user', UserDetailsView.as_view()),
 
     # allauth
     path("accounts/", include("allauth.urls")),

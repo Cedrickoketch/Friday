@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Cedrickoketch.github.io/Friday.git",
   "name": "friday-frontend",
   "private": true,
   "version": "0.1.0",
@@ -6,7 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "@google/generative-ai": "^0.12.0",
@@ -25,6 +28,7 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^6.1.1",
     "esbuild": "^0.28.2",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^4.3.2",
     "vite": "^8.2.2"

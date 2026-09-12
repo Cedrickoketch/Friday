@@ -61,10 +61,10 @@ export default function NewsPanel() {
       </div>
 
       {/* Articles */}
-      <div className="h-[65vh] overflow-y-auto space-y-3 py-10">
+      <div className="h-[65vh] overflow-y-auto overflow-x-hidden space-y-3 py-10">
         {loading ? (
           [...Array(5)].map((_, i) => (
-            <div key={i} className="flex gap-3 animate-pulse">
+            <div key={i} className="flex text-pretty gap-3 animate-pulse">
               <div className="w-16 h-14 bg-gray-800 rounded-xl shrink-0" />
               <div className="flex-1 space-y-1.5">
                 <div className="h-3 bg-gray-800 rounded-sm w-3/4" />

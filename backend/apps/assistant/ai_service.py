@@ -6,11 +6,7 @@ Set AI_PROVIDER=gemini  → uses Google Gemini API (free tier) — great for pro
 import json
 from django.conf import settings
 
-SYSTEM_PROMPT = """
-You are Friday, a highly capable and intelligent AI personal assistant. 
-You help the user manage their tasks, calendar events, and summarize local news.
-Keep your responses concise, friendly, helpful, and direct.
-"""
+
 
 def chat(messages: list[dict], user_message: str) -> dict:
     """
@@ -38,7 +34,7 @@ def _ollama_chat(messages: list[dict], user_message: str) -> dict:
     resp = requests.post(
         f"{settings.OLLAMA_BASE_URL}/api/chat",
         json=payload,
-        timeout=120,
+        timeout=300,
     )
     resp.raise_for_status()
     reply_text = resp.json()["message"]["content"]
@@ -51,7 +47,7 @@ def _gemini_chat(messages: list[dict], user_message: str) -> dict:
     genai.configure(api_key=settings.GEMINI_API_KEY)
     model = genai.GenerativeModel(
         model_name="gemini-1.5-flash",  # free tier
-        system_instruction=SYSTEM_PROMPT,
+        system_instruction=open(settings.SYSTEM_PROMPT).read(),
     )
     # Convert messages to Gemini format
     history = []

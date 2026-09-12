@@ -19,7 +19,8 @@ media/
 staticfiles/
 
 # Environment
-.env
+frontend/.env
+backend/.env
 .env.local
 .env.*.local
 
@@ -42,3 +43,5 @@ dist/
 .pytest_cache/
 htmlcov/
 .coverage
+backend/friday_project/client_secret.json
+backend/friday_project/client_secret.json

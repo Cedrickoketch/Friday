@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useChatStore } from '../../store/chatStore'
 import { useAuthStore } from '../../store/authStore'
 import VoiceButton from './VoiceButton'
+import Markdown from 'react-markdown'
 
 export default function ChatDrawer() {
   const { isOpen, close, messages, isLoading, sendMessage } = useChatStore()
@@ -91,7 +92,7 @@ export default function ChatDrawer() {
                     }
                   `}
                 >
-                  {msg.content}
+                  <Markdown>{msg.content}</Markdown>
                 </div>
               </div>
             ))}

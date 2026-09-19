@@ -71,7 +71,7 @@ fi
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "  Friday is running!"
-echo "  Frontend → http://localhost:5173"
+echo "  Frontend → http://localhost:5173/Friday/"
 echo "  Backend  → http://localhost:8000"
 echo "  Admin    → http://localhost:8000/admin"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

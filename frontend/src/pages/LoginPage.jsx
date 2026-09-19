@@ -62,7 +62,7 @@ export default function LoginPage() {
       {/* Custom styled Google Button to trigger the code client */}
       <button
         onClick={handleGoogleSignInClick}
-        className="w-[280px] h-[44px] flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-gray-900 font-medium rounded-full px-4 shadow transition duration-200 text-sm"
+        className="w-70 h-11 flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-gray-900 font-medium rounded-full px-4 shadow transition duration-200 text-sm"
       >
         <svg className="w-5 h-5" viewBox="0 0 24 24">
           <path

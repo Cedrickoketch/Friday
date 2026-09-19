@@ -8,6 +8,7 @@ import { useChatStore } from '../store/chatStore'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useAuthStore } from '../store/authStore'
 import axios from 'axios'
+import logo from '../assets/logo.svg'
 
 export default function DashboardPage() {
   const { toggle } = useChatStore()
@@ -90,7 +91,7 @@ export default function DashboardPage() {
 
         {/* Centre — Logo (click to open chat) + Calendar */}
         <section className="lg:col-span-1 flex flex-col items-center gap-4">
-          <img src="/src/assets/Friday-logo.svg" alt="Friday Logo" className="w-20 h-20 cursor-pointer" onClick={toggle} />
+          <img src={logo} alt="Friday Logo" className="w-20 h-20 cursor-pointer" onClick={toggle} />
           <CalendarPanel />
         </section>
 

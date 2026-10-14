@@ -51,7 +51,7 @@ export default function TopBar() {
           className="flex items-center gap-2 group relative cursor-pointer"
           onClick={() => setIsActive(!isActive)}>
             {/* User image */}
-            <div className='flex justify-center items-center hover:bg-gray-800 hover:font-bold hover:text-white p-1 rounded-2xl transition-all duration-150 ease-out font-semibold'>
+            <div className='flex justify-center items-center hover:bg-gray-800 hover:font-bold hover:text-white p-1 pr-3 rounded-2xl transition-all duration-150 ease-out font-semibold'>
               {user?.avatar ? (
               <img referrerPolicy="no-referrer" src={user.avatar} alt="avatar" className="w-8 h-8 rounded-full" />
               ) : (
